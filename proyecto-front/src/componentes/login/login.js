@@ -1,6 +1,7 @@
 import React from "react";
 import { Button, Container, Form, Row, Col } from "react-bootstrap";
 import './login.css'
+import ImagenLogo from "../imagenes/imagenLogo";
 
 export default class Login extends React.Component {
   constructor(props) {
@@ -19,6 +20,7 @@ export default class Login extends React.Component {
       <Container id="login-container">
         <Row>
           <Col>
+          <ImagenLogo/>
             <Row>
               <h2>Iniciar sesión</h2>
             </Row>

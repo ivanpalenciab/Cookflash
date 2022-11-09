@@ -1,0 +1,82 @@
+#main {
+    margin-top: 100px;
+    background-color: white;
+}
+
+#bienvenida{
+    display: flex;
+    text-align: center;
+}
+
+#bienvenida{
+    vertical-align: bottom;
+    margin-bottom: 20px;
+    color: black;
+}
+
+#bienvenida div {
+    margin-left: 10px;
+    font-size: 45px;
+}
+
+#mensaje{
+    text-align: left;
+    margin-bottom: 30px;
+}
+
+#receta-info #receta-info-col{
+    text-align: left;
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px 5px gray;
+    padding-bottom: 10px;
+}
+
+#imagen-receta{
+    margin: 20px;
+}
+
+#informacion-adicional{
+    /*box-shadow: 5px 5px 10px 5px gray;*/
+    margin-top: 20px;
+}
+
+#informacion-adicional :not(#info-aux){
+    border-radius: 10px;
+    margin-top:15px ;
+    padding-right: 5px;
+    margin-bottom:20px ;
+    background-color: white;
+    border-right: 5px;
+    border-color:  #e47611;
+}
+
+#informacion-adicional #t-1,#informacion-adicional #t-2,#informacion-adicional #t-3,#informacion-adicional #t-4{
+    font-weight: bolder;
+}
+#informacion-adicional #c1, #informacion-adicional #c2, #informacion-adicional #c3, #informacion-adicional #c4{
+    margin-right: 10px;
+}
+
+
+
+#ingredientes #ingredientes-col{
+    text-align: left;
+    box-shadow: 5px 5px 10px 5px gray;
+    border-radius: 10px;
+}
+
+#preparacion #preparacion-col , #tips #tips-col{
+    border-radius: 10px;
+    margin-top: 15px;
+    text-align: left;
+    box-shadow: 5px 5px 10px 5px gray;
+    border-radius: 10px;
+    padding-bottom: 20px;
+}
+
+h2{
+    color: #e47611;
+}
+#tips{
+    margin-bottom: 20px;
+}
