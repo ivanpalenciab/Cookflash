@@ -1,4 +1,6 @@
 import React from 'react';
+import Menu from '../navbar/navbar'
+import MainPlanes from './planesMain';
 
 export default class Planes extends React.Component {
     constructor(props) {
@@ -6,7 +8,11 @@ export default class Planes extends React.Component {
         this.state = {};
     }
     render() { 
-        return (  );
+        return (<div>
+            <Menu/>
+            <MainPlanes></MainPlanes>
+            </div>
+         );
     }
 }
  

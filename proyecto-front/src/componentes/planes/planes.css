@@ -1,0 +1,27 @@
+main{
+    margin-top: 100px;
+    background-color: white;
+}
+
+#estandar, #full-plus ,#weekend, #basic{
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px 5px  #e47611;
+    margin: 10px;
+}
+
+#planes-container ul{
+    text-align: left;
+}
+
+
+#planes-container h1{
+    color: black;
+}
+
+.d-grid {
+margin-top: 20px;
+margin-bottom: 20px;
+} 
+#boton-4, #boton-3, #boton-2, #boton-1{
+    background-color: #e47611;
+}

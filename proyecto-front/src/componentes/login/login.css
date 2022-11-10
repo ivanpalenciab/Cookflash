@@ -13,7 +13,12 @@
 #login-container .form-label{
     float:left;
 }
+#login-form
 
 #boton-iniciarSesion{
     background-color: orangered;
+}
+
+#logo{
+    height: 50px;
 }
