@@ -13,7 +13,9 @@
 #login-container .form-label{
     float:left;
 }
-#login-form
+#login-container{
+    margin-bottom: 50px;
+}
 
 .boton-iniciarSesion{
     background-color:#e47611;
@@ -22,4 +24,9 @@
 #logo{
     height: 50px;
     margin-bottom: 10px;
+}
+#imagen-container img{
+    height: 200px;
+    margin-bottom: 10px;
+    margin-top: 10px;
 }

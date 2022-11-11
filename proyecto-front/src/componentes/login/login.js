@@ -20,9 +20,10 @@ export default class Login extends React.Component {
       <Container id="login-container">
         <Row>
           <Col>
-            <Row>
-              
+            <Row >
+              <div id="imagen-container">
               <ImagenLogo />
+              </div>
               
             </Row>
             <Row >
@@ -65,6 +66,7 @@ export default class Login extends React.Component {
                       Iniciar sesión
                     </Button>
                   </Form>
+                  <a href="">¿No tienes cuenta ? Registrate</a>
                 </Col>
               </Row>
             </Row>
