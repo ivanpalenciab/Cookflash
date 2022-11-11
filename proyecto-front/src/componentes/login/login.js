@@ -58,7 +58,6 @@ export default class Login extends React.Component {
                     </Form.Group>
                     <Button
                       className="boton-iniciarSesion"
-                      variant="primary"
                       onClick={() => {
                         this.iniciarSesion();
                       }}

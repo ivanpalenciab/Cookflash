@@ -15,10 +15,11 @@
 }
 #login-form
 
-#boton-iniciarSesion{
-    background-color: orangered;
+.boton-iniciarSesion{
+    background-color:#e47611;
 }
 
 #logo{
     height: 50px;
+    margin-bottom: 10px;
 }

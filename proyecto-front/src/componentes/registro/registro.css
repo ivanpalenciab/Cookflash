@@ -1,0 +1,25 @@
+main{
+    margin-top: 150px;
+    margin-bottom: 50PX;
+}
+
+#registro-form .form-label{
+    float:left;
+}
+
+#boton-registrarse{
+    background-color: #e47611;
+}
+
+#registro-logo{
+    width: 50px;
+}
+
+.imagen-container img{
+    margin-top: 180px;
+
+}
+
+h1{
+    color: #e47611;
+}
