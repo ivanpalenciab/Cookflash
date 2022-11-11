@@ -4,7 +4,14 @@ import { Button, Form } from "react-bootstrap";
 export default class RegistroForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      nombre :'',
+      apellidos:'',
+      email:'',
+      contrasena:'',
+      repetirContrasena:'',
+      direccion:''
+    };
   }
 
   render() {
@@ -14,7 +21,11 @@ export default class RegistroForm extends React.Component {
 
         <Form id="registro-form">
           <Form.Group className="mb-3" controlId="form-nombre">
-            <Form.Control type="text" placeholder="Nombres" />
+            <Form.Control type="text" placeholder="Nombres"
+            onChange={(e) => 
+            this.setState({nombre: e.target.value})}
+            />
+            {this.state.nombre}
           </Form.Group>
 
           <Form.Group className="mb-3" controlId="form-apellidos">
