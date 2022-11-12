@@ -16,7 +16,7 @@ export default class MenuInicio extends React.Component {
     return (
       <Navbar fixed="top" id="navbar"  expand="lg">
         <Container>
-          <Navbar.Brand className="logo-menu" href="#home">
+          <Navbar.Brand className="logo-menu" href="/login">
             {/*Cookflash <span id="usuario-sub-branm"></span>*/}
             <ImagenLogo />
             </Navbar.Brand>

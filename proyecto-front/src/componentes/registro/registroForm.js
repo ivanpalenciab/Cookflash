@@ -1,6 +1,7 @@
 import React from "react";
 import { Button, Form } from "react-bootstrap";
 
+
 export default class RegistroForm extends React.Component {
   constructor(props) {
     super(props);
@@ -77,7 +78,7 @@ export default class RegistroForm extends React.Component {
             </Button>
             </div>
         </Form>
-        <a href="">¿Tienes una cuenta ? Inicia sesión</a>
+        <a href="login">¿Tienes una cuenta ? Inicia sesión</a>
       </main>
     );
   }

@@ -66,7 +66,7 @@ export default class Login extends React.Component {
                       Iniciar sesión
                     </Button>
                   </Form>
-                  <a href="">¿No tienes cuenta ? Registrate</a>
+                  <a href="/registro">¿No tienes cuenta ? Registrate</a>
                 </Col>
               </Row>
             </Row>

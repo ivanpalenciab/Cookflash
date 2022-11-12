@@ -16,15 +16,15 @@ export default class Menu extends React.Component {
     return (
       <Navbar fixed="top" id="navbar"  expand="lg">
         <Container>
-          <Navbar.Brand className="logo-menu" href="#home">
+          <Navbar.Brand className="logo-menu" href="/home">
             {/*Cookflash <span id="usuario-sub-branm"></span>*/}
             <ImagenLogo />
             </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
-              <Nav.Link href="#home">Home</Nav.Link>
-              <Nav.Link href="#link">Planes</Nav.Link>
+              <Nav.Link href="/home">Home</Nav.Link>
+              <Nav.Link href="/planes">Planes</Nav.Link>
             </Nav>
             <DropdownButton id="dropdown-button" title="Usuario">
               <Dropdown.Header id="dropdown-header">
@@ -34,7 +34,7 @@ export default class Menu extends React.Component {
               <Row>#USUARIO#</Row>
               </Dropdown.Header>
               <Dropdown.Divider/>
-              <Dropdown.Item href="#/action1">Cerrar sesión</Dropdown.Item>
+              <Dropdown.Item href="/login">Cerrar sesión</Dropdown.Item>
               {/*<Dropdown.Item as="button">Another action</Dropdown.Item>
               <Dropdown.Item as="button">Something else</Dropdown.Item>*/}
             </DropdownButton>
