@@ -2,6 +2,7 @@ import React from "react";
 import { Button, Container, Form, Row, Col } from "react-bootstrap";
 import "./login.css";
 import ImagenLogo from "../imagenes/imagenLogo";
+import axios from 'axios';
 
 export default class Login extends React.Component {
   constructor(props) {
@@ -13,6 +14,7 @@ export default class Login extends React.Component {
   }
 
   iniciarSesion() {
+    
     alert(`Usuario: ${this.state.usuario} - password: ${this.state.pass}`);
   }
   render() {
