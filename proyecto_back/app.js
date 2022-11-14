@@ -7,6 +7,8 @@ var database = require("./config/database");
 var indexRouter = require('./routes/index');
 var usuariosRouter = require('./routes/usuarios.router')
 
+var cors = require('cors');
+
 var app = express();
 
 
@@ -16,6 +18,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(cors());
 
 //Mongo connection
 database.mongoConnect();

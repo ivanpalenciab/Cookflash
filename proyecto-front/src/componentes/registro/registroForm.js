@@ -1,12 +1,16 @@
 import React from "react";
 import { Button, Form } from "react-bootstrap";
+import axios from 'axios';
+import app from '../../app.json'
+
+const {APIHOST}=app
 
 
 export default class RegistroForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      nombre :'',
+      nombre:'',
       apellidos:'',
       email:'',
       contrasena:'',
@@ -16,7 +20,19 @@ export default class RegistroForm extends React.Component {
   
   }
   registrarse(){
-    console.log(this.state)
+    axios.post(`${APIHOST}/usuario`,{
+      nombre:this.state.nombre,
+      apellidos:this.state.apellidos,
+      email:this.state.email,
+      contrasena:this.state.contrasena,
+      direccion:this.state.direccion,
+    })
+    .then((response)=>{
+      console.log(response);
+    })
+    .catch((err)=>{
+      console.log(err);
+    });
   }
 
   render() {
