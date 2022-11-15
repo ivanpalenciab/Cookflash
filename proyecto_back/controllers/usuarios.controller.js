@@ -1,15 +1,19 @@
 const Usuario = require("../models/usuarios.model")
+const crypto = require('crypto')
 let response ={
     msg:"",
     exito:false
 }
 
 exports.create = function(req,res){
+
+    hashedpass = crypto.createHash("sha512").update(req.body.contrasena).digest("hex");
+
     let usuario = new Usuario({
         nombre:req.body.nombre,
         apellidos:req.body.apellidos,
         email:req.body.email,
-        contrasena:req.body.contrasena,
+        contrasena:hashedpass,
         direccion:req.body.direccion
     })
 
