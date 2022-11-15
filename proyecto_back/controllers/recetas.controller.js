@@ -15,6 +15,7 @@ exports.create = function (req, res) {
     tiempo_preparacion: req.body.tiempo_preparacion,
     tiempo_coccion: req.body.tiempo_coccion,
     tiempo_refrigeracion: req.body.tiempo_refrigeracion,
+    ingredientes:req.body.ingredientes,
     preparacion: req.body.preparacion,
     tips_adicionales: req.body.tips_adicionales,
     calificacion: req.body.calificacion

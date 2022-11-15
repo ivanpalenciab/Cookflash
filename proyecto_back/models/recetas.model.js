@@ -10,6 +10,7 @@ const RecetaSchema = new Schema({
     tiempo_preparacion: String,
     tiempo_coccion: String,
     tiempo_refrigeracion: String,
+    ingredientes:Schema.Types.Mixed,
     preparacion: String,
     tips_adicionales: String,
     calificacion: String
