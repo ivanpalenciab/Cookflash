@@ -34,3 +34,9 @@ exports.create = function (req, res) {
     res.json(response);
   });
 };
+
+exports.find = function(req,res){
+  Receta.find(function(err,receta){
+    res.json(receta)
+})
+}
