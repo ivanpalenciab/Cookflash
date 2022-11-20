@@ -31,6 +31,7 @@
     padding-bottom: 10px;
 }
 
+
 #imagen-receta{
     margin: 20px;
 }
@@ -79,4 +80,8 @@ h2{
 }
 #tips{
     margin-bottom: 20px;
+}
+
+#receta-info{
+    margin: 20px;
 }
