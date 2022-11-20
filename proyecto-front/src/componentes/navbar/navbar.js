@@ -26,7 +26,7 @@ export default class Menu extends React.Component {
               <Nav.Link href="/home">Home</Nav.Link>
               <Nav.Link href="/planes">Planes</Nav.Link>
             </Nav>
-            <DropdownButton id="dropdown-button" title="Usuario">
+           {/* <DropdownButton id="dropdown-button" title="Usuario">
               <Dropdown.Header id="dropdown-header">
                 <Row>
               <FontAwesomeIcon icon={faUserCircle} />
@@ -35,6 +35,16 @@ export default class Menu extends React.Component {
               </Dropdown.Header>
               <Dropdown.Divider/>
               <Dropdown.Item href="/login">Cerrar sesión</Dropdown.Item>
+    </DropdownButton>*/}
+
+<DropdownButton id="dropdown-button" title="Nueva receta">
+              <Dropdown.Header id="dropdown-header">
+                <Row>
+              </Row>
+              <Row>Nueva Receta</Row>
+              </Dropdown.Header>
+              <Dropdown.Divider/>
+              <Dropdown.Item href="/login">Crear receta</Dropdown.Item>
               {/*<Dropdown.Item as="button">Another action</Dropdown.Item>
               <Dropdown.Item as="button">Something else</Dropdown.Item>*/}
             </DropdownButton>

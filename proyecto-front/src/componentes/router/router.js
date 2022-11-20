@@ -4,6 +4,7 @@ import Login from '../login/login';
 import Home from '../home/home';
 import Planes from '../planes/planes';
 import Registro from '../registro/registro';
+import Receta from '../Recetas/receta'
 
 export default function AppRoutes(){
     return(
@@ -14,6 +15,7 @@ export default function AppRoutes(){
                 <Route exact path = "/home" element = {<Home/>}/>
                 <Route exact path='/planes' element = {<Planes/>}/>
                 <Route exact path='/registro' element = {<Registro/>}/>
+                <Route exact path='/receta' element = {<Receta/>}/>
             </Routes>
         </Router>
     )
