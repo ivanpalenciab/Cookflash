@@ -3,7 +3,6 @@ import { Container, Row, Col } from "react-bootstrap";
 //import "./registro.css";
 
 //Componentes
-import ImagenLogo from "../imagenes/imagenLogo";
 import CrearReceta from "./crearReceta";
 import Menu from "../navbar/navbar";
 

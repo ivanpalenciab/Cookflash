@@ -4,7 +4,6 @@ import axios from "axios";
 import app from "../../app.json";
 
 const { APIHOST } = app;
-let mistake = false
 
 export default class CrearReceta extends React.Component {
   constructor(props) {
@@ -26,7 +25,6 @@ export default class CrearReceta extends React.Component {
   }
   crearReceta() {
     
-      console.log(this.contrasena,this.repetirContrasena)
       axios.post(`${APIHOST}/recetas/create`, {
         nombre_receta: this.state.nombre_receta,
         tipo_receta: this.state.tipo_receta,

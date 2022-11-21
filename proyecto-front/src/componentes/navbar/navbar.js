@@ -44,7 +44,7 @@ export default class Menu extends React.Component {
               <Row>Nueva Receta</Row>
               </Dropdown.Header>
               <Dropdown.Divider/>
-              <Dropdown.Item href="/login">Crear receta</Dropdown.Item>
+              <Dropdown.Item href="/crear-receta">Crear receta</Dropdown.Item>
               {/*<Dropdown.Item as="button">Another action</Dropdown.Item>
               <Dropdown.Item as="button">Something else</Dropdown.Item>*/}
             </DropdownButton>

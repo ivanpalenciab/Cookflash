@@ -14,12 +14,13 @@ export default function RecetaHome(props) {
           {/*Aqui podria ir una imagen */}
           <Row id="imagen-receta">
             <Col>
-              <img src="https://www.lavanguardia.com/files/image_948_465/files/fp/uploads/2020/09/09/5f58b1bb6d322.r_d.627-418.jpeg"></img>
+              {/* Aqui iria la imagen de la receta
+              <img src="https://www.lavanguardia.com/files/image_948_465/files/fp/uploads/2020/09/09/5f58b1bb6d322.r_d.627-418.jpeg"></img>*/}
             </Col>
           </Row>
 
-          {/*Aqui va la descripcion de la receta*/}
           <p>{props.descripcion}</p>
+          <a href={"/"+props.id}>ver receta </a>
         </Col>
       </Row>
     </div>
