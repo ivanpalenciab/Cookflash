@@ -2,6 +2,8 @@ import React from "react";
 import {  Button, Form } from "react-bootstrap";
 import axios from "axios";
 import app from "../../app.json";
+import { useHistory } from "react-router-dom"
+
 
 const { APIHOST } = app;
 
@@ -24,7 +26,6 @@ export default class CrearReceta extends React.Component {
       }
   }
   crearReceta() {
-    
       axios.post(`${APIHOST}/recetas/create`, {
         nombre_receta: this.state.nombre_receta,
         tipo_receta: this.state.tipo_receta,
@@ -41,6 +42,7 @@ export default class CrearReceta extends React.Component {
         })
         .then((response) => {
           console.log(response);
+          console.log("Receta creada correctamente")
         })
         .catch((err) => {
           console.log(err);

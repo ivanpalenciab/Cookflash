@@ -1,7 +1,8 @@
 //Librerias externas
-import React from "react";
+import React, { useState } from "react";
 import "./home.css";
 import axios from "axios";
+import { useParams } from "react-router-dom";
 //Locales
 import app from "../../app.json";
 
@@ -10,23 +11,30 @@ import Menu from "../navbar/navbar";
 import RecetaHome from "./recetasHome";
 import { Container, Col } from "react-bootstrap";
 
-let recetas = [];
+//let recetas = [];
 const { APIHOST } = app;
-axios
-  .get(`${APIHOST}/recetas`)
-  .then((res) => {
-    recetas = res.data;
-  })
-  .catch((error) => {
-    console.log(error);
-  });
 
-export default class Home extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
-  render() {
+
+export default function Home(){
+  const [recetas, setRecetas] = useState(null)
+  React.useEffect(()=>{
+    axios
+    .get(`${APIHOST}/recetas`)
+    .then((res) => {
+      setRecetas (res.data)
+      //console.log(res.data)
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+  },[])
+  if(!recetas) return null
+
+
+   
+  console.log(recetas)
+
+  
     return (
       <div id="home">
         <Menu />
@@ -59,4 +67,4 @@ export default class Home extends React.Component {
       </div>
     );
   }
-}
+
