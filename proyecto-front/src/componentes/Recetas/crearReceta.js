@@ -2,54 +2,54 @@ import React from "react";
 import {  Button, Form } from "react-bootstrap";
 import axios from "axios";
 import app from "../../app.json";
+import { useNavigate } from "react-router-dom";
 
 
 
 const { APIHOST } = app;
 
-export default class CrearReceta extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-        nombre_receta:"",
-        tipo_receta: "",
-        descripcion: "",
-        clasificacion: "",
-        origen: "",
-        tiempo_preparacion: "",
-        tiempo_coccion: "",
-        tiempo_refrigeracion: " ",
-        ingredientes:" ",
-        preparacion: " ",
-        tips_adicionales: " ",
-        calificacion: 0
-      }
-  }
-  crearReceta() {
+export default function  CrearReceta(){
+
+  const navigate = useNavigate();
+    
+      const[nombre_receta, setNombre]=React.useState(" ");
+       const [ tipo_receta,setTipo] = React.useState(" ");
+        const [descripcion, setDescripcion] = React.useState(" ");
+        const [clasificacion,setClasificacion] =  React.useState(" ");
+        const [origen,setOrigen] = React.useState(" ");
+       const [ tiempo_preparacion,setTiempoPreparacion] = React.useState(" ");
+       const [ tiempo_coccion,setTiempoCoccion] = React.useState(" ");
+       const [ tiempo_refrigeracion,setTiempoRefrigeracion] =  React.useState(" ");
+       const [ ingredientes,setIngredientes] = React.useState(" ");
+       const [ preparacion,setPreparacion] =  React.useState(" ");
+       const [ tips_adicionales,setTips] =  React.useState(" ");
+
+ function crearReceta() {
       axios.post(`${APIHOST}/recetas/create`, {
-        nombre_receta: this.state.nombre_receta,
-        tipo_receta: this.state.tipo_receta,
-        descripcion:this.state.descripcion ,
-        clasificacion:this.state.clasificacion ,
-        origen:this.state.origen,
-        tiempo_preparacion: this.state.tiempo_preparacion,
-        tiempo_coccion:this.state.tiempo_coccion ,
-        tiempo_refrigeracion:this.state.tiempo_refrigeracion ,
-        ingredientes:this.state.ingredientes,
-        preparacion:this.state.preparacion ,
-        tips_adicionales:this.state.tips_adicionales,
-        calificacion:this.state.calificacion,
+        nombre_receta: nombre_receta,
+        tipo_receta: tipo_receta,
+        descripcion: descripcion ,
+        clasificacion: clasificacion ,
+        origen: origen,
+        tiempo_preparacion: tiempo_preparacion,
+        tiempo_coccion: tiempo_coccion ,
+        tiempo_refrigeracion: tiempo_refrigeracion ,
+        ingredientes:ingredientes,
+        preparacion: preparacion ,
+        tips_adicionales: tips_adicionales,
+        calificacion: 0,
         })
         .then((response) => {
           console.log(response);
           console.log("Receta creada correctamente")
+          navigate('/home')
         })
         .catch((err) => {
           console.log(err);
         });}
   
-
-  render() {
+  
+   
     return (
       <main>
         <h1>Nueva receta</h1>
@@ -59,7 +59,7 @@ export default class CrearReceta extends React.Component {
             <Form.Control
               type="text"
               placeholder="Nombre Receta"
-              onChange={(e) => this.setState({ nombre_receta: e.target.value })}
+              onChange={(e) => setNombre( e.target.value )}
             />
           </Form.Group>
 
@@ -67,7 +67,7 @@ export default class CrearReceta extends React.Component {
             <Form.Control
               type="text"
               placeholder="Tipo Receta"
-              onChange={(e) => this.setState({ tipo_receta: e.target.value })}
+              onChange={(e) => setTipo( e.target.value )}
             />
           </Form.Group>
 
@@ -75,7 +75,7 @@ export default class CrearReceta extends React.Component {
             <Form.Control
               type="text"
               placeholder="descripcion"
-              onChange={(e) => this.setState({ descripcion: e.target.value })}
+              onChange={(e) => setDescripcion( e.target.value )}
             />
           </Form.Group>
 
@@ -83,7 +83,7 @@ export default class CrearReceta extends React.Component {
             <Form.Control
               type="text"
               placeholder="Clasificacion"
-              onChange={(e) => this.setState({ clasificacion: e.target.value })}
+              onChange={(e) =>setClasificacion( e.target.value )}
             />
           </Form.Group>
 
@@ -91,7 +91,7 @@ export default class CrearReceta extends React.Component {
             <Form.Control
               type="text"
               placeholder="origen"
-              onChange={(e) => this.setState({ origen: e.target.value })}
+              onChange={(e) => setOrigen( e.target.value )}
             />
           </Form.Group>
 
@@ -100,7 +100,7 @@ export default class CrearReceta extends React.Component {
               type="text"
               placeholder="tiempo preparacion total"
               onChange={(e) =>
-                this.setState({ tiempo_preparacion: e.target.value })
+                setTiempoPreparacion( e.target.value )
               }
             />
           </Form.Group>
@@ -109,7 +109,7 @@ export default class CrearReceta extends React.Component {
             <Form.Control
               type="text"
               placeholder="tiempo coccion"
-              onChange={(e) => this.setState({ tiempo_coccion: e.target.value })}
+              onChange={(e) => setTiempoCoccion( e.target.value )}
             />
           </Form.Group>
 
@@ -117,7 +117,7 @@ export default class CrearReceta extends React.Component {
             <Form.Control
               type="text"
               placeholder="tiempo refrigeracion"
-              onChange={(e) => this.setState({ tiempo_refrigeracion: e.target.value })}
+              onChange={(e) => setTiempoRefrigeracion(  e.target.value )}
             />
           </Form.Group>
           
@@ -125,7 +125,7 @@ export default class CrearReceta extends React.Component {
             <Form.Control
               type="text"
               placeholder="ingredientes"
-              onChange={(e) => this.setState({ ingredientes: e.target.value })}
+              onChange={(e) => setIngredientes(  e.target.value )}
             />
           </Form.Group>
 
@@ -133,7 +133,7 @@ export default class CrearReceta extends React.Component {
             <Form.Control
               type="text"
               placeholder="preparacion"
-              onChange={(e) => this.setState({ preparacion: e.target.value })}
+              onChange={(e) => setPreparacion(  e.target.value )}
             />
           </Form.Group>
 
@@ -141,7 +141,7 @@ export default class CrearReceta extends React.Component {
             <Form.Control
               type="text"
               placeholder="tips adicionales"
-              onChange={(e) => this.setState({ tips_adicionales: e.target.value })}
+              onChange={(e) => setTips( e.target.value )}
             />
           </Form.Group>
           
@@ -152,7 +152,7 @@ export default class CrearReceta extends React.Component {
               id="boton-crear-receta"
               size="lg"
               onClick={() => {
-                this.crearReceta();
+                crearReceta();
               }}
             >
               Crear
@@ -163,5 +163,5 @@ export default class CrearReceta extends React.Component {
       </main>
     );
   };
-}
+
 
