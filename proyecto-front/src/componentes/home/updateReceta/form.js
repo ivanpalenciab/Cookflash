@@ -2,13 +2,14 @@ import React from "react";
 import {  Button, Form } from "react-bootstrap";
 import axios from "axios";
 import app from "../../../app.json";
-import { useParams } from "react-router-dom";
+import { useParams,useNavigate } from "react-router-dom";
 
 
 const { APIHOST } = app;
 
 export default function Actualizar() {
   let params = useParams();
+  const navigate = useNavigate();
     
       const[nombre_receta, setNombre]=React.useState(" ");
        const [ tipo_receta,setTipo] = React.useState(" ");
@@ -21,7 +22,6 @@ export default function Actualizar() {
        const [ ingredientes,setIngredientes] = React.useState(" ");
        const [ preparacion,setPreparacion] =  React.useState(" ");
        const [ tips_adicionales,setTips] =  React.useState(" ");
-       const [ calificacion,setCalificacion] = React.useState(" ");
 
   
    function actualizarReceta() {
@@ -37,11 +37,11 @@ export default function Actualizar() {
         ingredientes:ingredientes,
         preparacion: preparacion ,
         tips_adicionales: tips_adicionales,
-        calificacion:calificacion,
         })
         .then((response) => {
           console.log(response);
           console.log("Receta actualizada correctamente")
+          navigate('/'+params.id)
         })
         .catch((err) => {
           console.log(err);

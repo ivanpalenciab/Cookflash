@@ -3,6 +3,7 @@ import { Container, Row, Col, ButtonGroup, Button } from "react-bootstrap";
 import axios from "axios";
 import { useNavigate } from 'react-router-dom';
 import app from '../../app.json';
+import Actualizar from "./updateReceta/form";
 
 const { APIHOST } = app;
 
@@ -20,7 +21,10 @@ export default function Main(props) {
         console.log(error);
       });
     }
-    let aux=false
+    
+    function Actualizar(id){
+      navigate('/'+id+'/actualizar')
+    }
   
 
     return (
@@ -108,11 +112,10 @@ export default function Main(props) {
               </ul>
             </Col>
           </Row>
-                <Button onClick={()=> aux =true}
+                <Button onClick={()=> Actualizar(props.id)}
                 >Actualizar receta</Button>
                 <Button onClick={()=>borrarReceta(props.id)}
                 >Borrar</Button>
-                {aux && <h1>Holi mundo</h1>}
         </Container>
       </main>
     );

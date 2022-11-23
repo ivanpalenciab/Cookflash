@@ -31,9 +31,6 @@ export default function RecetaPage() {
 
     if (!receta) return null;
 
-
-    console.log('aqui va la receta')
-    console.log(receta)
   return (
     <div>
       <Menu />
