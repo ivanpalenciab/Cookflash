@@ -93,4 +93,4 @@ exports.remove = function(req,res){
     response.msg = "receta eliminada correctamente"
     res.json(response)
   })
-}
+} 
