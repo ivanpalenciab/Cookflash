@@ -6,6 +6,7 @@ import Planes from '../planes/planes';
 import Registro from '../registro/registro';
 import Receta from '../Recetas/receta'
 import RecetaPage from '../home/recetaPage';
+import ActualizarReceta from '../home/updateReceta/update';
 
 export default function AppRoutes(){
     return(
@@ -18,6 +19,7 @@ export default function AppRoutes(){
                 <Route exact path='/registro' element = {<Registro/>}/>
                 <Route exact path='/crear-receta' element = {<Receta/>}/>
                 <Route exact path='/:id' element = {<RecetaPage/>}/>
+                <Route exact path='/:id/actualizar' element = {<ActualizarReceta/>}/>
             </Routes>
         </Router>
     )

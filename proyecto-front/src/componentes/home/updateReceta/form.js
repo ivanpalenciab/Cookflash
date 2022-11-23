@@ -1,15 +1,15 @@
 import React from "react";
 import {  Button, Form } from "react-bootstrap";
 import axios from "axios";
-import app from "../../app.json";
-
+import app from "../../../app.json";
 
 
 const { APIHOST } = app;
 
-export default class CrearReceta extends React.Component {
+export default class Actualizar extends React.Component {
   constructor(props) {
     super(props);
+    console.log(this.props.params.id)
     this.state = {
         nombre_receta:"",
         tipo_receta: "",
@@ -25,8 +25,8 @@ export default class CrearReceta extends React.Component {
         calificacion: " "
       }
   }
-  crearReceta() {
-      axios.post(`${APIHOST}/recetas/create`, {
+  actualizarReceta() {
+      axios.put(`${APIHOST}/recetas/`, {
         nombre_receta: this.state.nombre_receta,
         tipo_receta: this.state.tipo_receta,
         descripcion:this.state.descripcion ,
@@ -42,7 +42,7 @@ export default class CrearReceta extends React.Component {
         })
         .then((response) => {
           console.log(response);
-          console.log("Receta creada correctamente")
+          console.log("Receta actualizada correctamente")
         })
         .catch((err) => {
           console.log(err);
@@ -52,7 +52,7 @@ export default class CrearReceta extends React.Component {
   render() {
     return (
       <main>
-        <h1>Nueva receta</h1>
+        <h1>Actualizar receta</h1>
         
         <Form id="nueva-receta-form">
         <Form.Group className="mb-3" controlId="form-nombre">
@@ -152,10 +152,10 @@ export default class CrearReceta extends React.Component {
               id="boton-crear-receta"
               size="lg"
               onClick={() => {
-                this.crearReceta();
+                this.actualizarReceta();
               }}
             >
-              Crear
+              actualizar
             </Button>
           </div>
         </Form>

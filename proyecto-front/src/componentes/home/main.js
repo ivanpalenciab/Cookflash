@@ -1,28 +1,28 @@
 import React from "react";
 import { Container, Row, Col, ButtonGroup, Button } from "react-bootstrap";
 import axios from "axios";
+import { useNavigate } from 'react-router-dom';
 import app from '../../app.json';
 
 const { APIHOST } = app;
 
 
 
-export default class Main extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-
+export default function Main(props) {
+  const navigate = useNavigate();
     function borrarReceta(id){
       axios.delete(`${APIHOST}/recetas/`+id).then((res) => {
         console.log("receta borrada");
+       navigate('/home')
         
       })
       .catch((error) => {
         console.log(error);
       });
     }
-  }
-  render() {
+    let aux=false
+  
+
     return (
       <main id="main">
         <Container>
@@ -41,14 +41,14 @@ export default class Main extends React.Component {
           <Row id="receta-info">
             <Col xs={2}> </Col>
             <Col id="receta-info-col">
-              <h2>{this.props.nombreReceta}</h2>
+              <h2>{props.nombreReceta}</h2>
               {/*Aqui podria ir una imagen */}
               {/* <Row id="imagen-receta">
                 <Col><img src=""></img></Col>
               </Row> */}
 
               {/*Aqui va la descripcion de la receta*/}
-              <p>{this.props.descripcion}</p>
+              <p>{props.descripcion}</p>
             </Col>
           </Row>
           {/*extra info */}
@@ -56,15 +56,15 @@ export default class Main extends React.Component {
             <Col xs={2} id="info-aux"></Col>
             <Col id="c1">
               <Row id="t-1">Tiempo Total</Row>
-              <Row> {this.props.tiempo_preparacion} Minutos</Row>
+              <Row> {props.tiempo_preparacion} Minutos</Row>
             </Col>
             <Col id="c2">
               <Row id="t-2">Tiempo Coccion</Row>
-              <Row> {this.props.tiempo_coccion} Minutos</Row>
+              <Row> {props.tiempo_coccion} Minutos</Row>
             </Col>
             <Col id="c3">
               <Row id="t-3">Tiempo Refrigereacion</Row>
-              <Row> {this.props.tiempo_refrigeracion} Minutos</Row>
+              <Row> {props.tiempo_refrigeracion} Minutos</Row>
             </Col>
             {/* <Col id="c4">
                 <Row id="t-4">Porciones</Row>
@@ -77,7 +77,7 @@ export default class Main extends React.Component {
             <Col id="ingredientes-col">
               <h2>Ingredientes</h2>
               <ul>
-                {this.props.ingredientes.map((ingrediente, i) => {
+                {props.ingredientes.map((ingrediente, i) => {
                   return <li key={i}> {ingrediente}</li>;
                 })}
               </ul>
@@ -90,7 +90,7 @@ export default class Main extends React.Component {
             <Col id="preparacion-col">
               <h2>preparación </h2>
               <ol>
-                {this.props.preparacion.map((paso, i) => {
+                {props.preparacion.map((paso, i) => {
                   return <li key={i}>{paso}</li>;
                 })}
               </ol>
@@ -102,19 +102,19 @@ export default class Main extends React.Component {
             <Col id="tips-col">
               <h2>Tips adicionales</h2>
               <ul>
-                {this.props.tips_adicionales.map((tip, i) => {
+                {props.tips_adicionales.map((tip, i) => {
                   return <li key={i}> {tip}</li>;
                 })}
               </ul>
             </Col>
           </Row>
-          <ButtonGroup>
-                <Button>Actualizar receta</Button>
-                <Button
+                <Button onClick={()=> aux =true}
+                >Actualizar receta</Button>
+                <Button onClick={()=>borrarReceta(props.id)}
                 >Borrar</Button>
-              </ButtonGroup>
+                {aux && <h1>Holi mundo</h1>}
         </Container>
       </main>
     );
   }
-}
+
