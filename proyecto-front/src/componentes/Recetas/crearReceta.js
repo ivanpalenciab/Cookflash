@@ -22,7 +22,7 @@ export default class CrearReceta extends React.Component {
         ingredientes:" ",
         preparacion: " ",
         tips_adicionales: " ",
-        calificacion: " "
+        calificacion: 0
       }
   }
   crearReceta() {
